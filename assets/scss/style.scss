@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  .chat {
+    background-color: #D8BFD8;
+    text-align: center;
+    height: 100vh;
+    &__title {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    &__body {
+      width: 300px;
+      height: 450px;
+      padding: 10px 0 10px 0;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 10px;
+      border: 1px solid #00BFFF;
+      background-color: #E6E6FA;
+      border-radius: 10px;
+    }
+    &__area {
+      display: flex;
+      flex-direction: column;
+      max-height: 430px;
+      overflow-y: auto;
+    }
+    &__sms {
+      word-wrap: break-word;
+      max-width: 200px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      color: #E6E6FA;
+      padding: 10px;
+      text-align: justify;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__browserSms {
+      align-self: flex-start;
+      margin-left: 10px;
+      background-color: #D8BFD8;
+    }
+    &__userSms {
+      align-self: flex-end;
+      margin-right: 10px;
+      background-color: #00BFFF;
+    }
+    &__sendForm {
+      display: flex;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__sentSms {
+      border: 1px solid #00BFFF;
+      padding: 5px;
+    }
+    &__button {
+      padding: 17px 10px 17px 10px;
+      cursor: pointer;
+      border: 1px solid #00BFFF;
+      background-color: #00BFFF;
+      outline: none;
+      color: #E6E6FA;
+      &:hover {
+        background-color: #E6E6FA;
+        border: 1px solid #00BFFF;
+        color: #00BFFF;
+      }
+    }
+  }
