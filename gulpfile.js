@@ -1,31 +1,40 @@
 // Данной строчкой мы подключаем Gulp к нашему проекту, посредством функции require. 
 // Данная функция подключает пакеты из папки node_modules в наш проект, присваивая их переменной. 
 const { src, dest, parallel, series, watch } = require('gulp');
+
 // npm install gulp-htmlmin --save-dev
 const minhtml = require('gulp-htmlmin');
+
 // npm install --save-dev gulp-babel @babel/core @babel/preset-env
 // Babel - это транспайлер, который переписывает код современного стандарта ES2015+ на более поздний
 const babel = require('gulp-babel');
+
 // npm install --save-dev gulp-uglify
 // минификация JS кода. позволяет сжимать и минимизировать файлы JS/CSS до 80% от их первоначального размера
 const uglify = require('gulp-uglify');
+
 // npm install --save-dev gulp-concat
 // Конкатенация (соеденить несколько файлов в один)
 const concat = require('gulp-concat');
+
+// npm install gulp-eslint -D
+const eslint = require('gulp-eslint');
+
 // npm install node-sass gulp-sass --save-dev
 // преобразование Sass, Scss в CSS
 const sass = require('gulp-sass');
+
 // npm install gulp-clean-css --save-dev
 // минификация CSS
 const mincss = require('gulp-clean-css');
-// npm install gulp-eslint -D
-const eslint = require('gulp-eslint');
-// npm i del -D
-// удаление
-const del = require('del');
+
 // npm i browser-sync -D
 // Вызов .create()означает, что вы получаете уникальную ссылку и позволяет создавать несколько серверов или прокси.
 const browserSync = require('browser-sync').create();
+
+// npm i del -D
+// удаление
+const del = require('del');
 
 function moveHTML() {
     return src('index.html') // Берем источник
@@ -63,7 +72,7 @@ function buildCSS() {
         .pipe(mincss())
         .pipe(concat('styles.css'))
         .pipe(dest('build/style'))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(browserSync.reload({stream:true})); // перезагрузка с возвращением потока преобразования
 }
 
 function launchBrowser() {
