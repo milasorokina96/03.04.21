@@ -24,6 +24,7 @@ const eslint = require('gulp-eslint');
 // удаление
 const del = require('del');
 // npm i browser-sync -D
+// Вызов .create()означает, что вы получаете уникальную ссылку и позволяет создавать несколько серверов или прокси.
 const browserSync = require('browser-sync').create();
 
 function moveHTML() {
