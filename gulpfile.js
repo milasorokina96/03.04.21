@@ -24,7 +24,6 @@ const eslint = require('gulp-eslint');
 // удаление
 const del = require('del');
 // npm i browser-sync -D
-//
 const browserSync = require('browser-sync').create();
 
 function moveHTML() {
